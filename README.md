@@ -6,7 +6,13 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 To start a local development server, run:
 
-1 - Generate ENV vars (Please create an account in mapbox)
+0 - Create .env file with mapbox key
+
+```bash
+MAPBOX_KEY='somekey'
+```
+
+1 - Generate Envs
 
 ```bash
 npm run set-envs
