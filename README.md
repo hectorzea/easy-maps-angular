@@ -6,6 +6,13 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 To start a local development server, run:
 
+1 - Generate ENV vars (Please create an account in mapbox)
+
+```bash
+npm run set-envs
+```
+
+2 - Run Project
 ```bash
 ng serve
 ```
