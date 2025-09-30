@@ -1,0 +1,28 @@
+<div #map class="h-[calc(100vh-64px)]"></div>
+<section class="fixed bg-white rounded top-20 left-10 p-5">
+  <h2 class="text-xl font-bold text-black mb-2">Markers</h2>
+  <div class="flex flex-col gap-2">
+    @for (marker of markers(); track $index) {
+    <div
+      class="form-control"
+      (click)="flyToMarker(marker.mapboxMarker.getLngLat())"
+      (dblclick)="deleteMarker(marker)"
+    >
+      <label class="label cursor-pointer">
+        <span class="label-text text-xs text-black">{{
+          marker.mapboxMarker.getLngLat() | json
+        }}</span>
+        <input
+          type="radio"
+          name="radio-12"
+          checked="checked"
+          class="radio bg-red-100 border-red-300 checked:bg-red-200 checked:text-red-600 checked:border-red-600"
+          [style]="{ backgroundColor: marker.mapboxMarker._color }"
+        />
+      </label>
+    </div>
+    } @empty{
+    <p class="text-black">No markers</p>
+    }
+  </div>
+</section>
